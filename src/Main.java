@@ -1,3 +1,4 @@
+import Model.Concepto;
 import Model.EntidadFinanciera;
 import Model.Importe;
 import Model.Saldo;
@@ -28,33 +29,38 @@ public class Main {
         lista.add(entidadFinanciera1);
         lista.add(entidadFinanciera2);
 
-        ServiciosEntidadFinanciera serviciosEntidadFinanciera = new ServiciosEntidadFinanciera(lista);
-        String message = "";
-        EntidadFinanciera entidadBuscada = null;
-        try {
-            entidadBuscada = serviciosEntidadFinanciera.buscarEntidad("BCP");
-        }catch (Exception e){
-            message = e.getMessage();
-        }finally {
-            System.out.println(entidadBuscada);
-        }
-        System.out.println(message);
-
-       /* double total = 0.0;
-        for (EntidadFinanciera item: lista) {
-            total += item.getSaldoDisponible();
-            System.out.println(item);
-        }
-        //System.out.println("\t\t\t\t total:" + total);
+        Concepto concepto = new Concepto();
+        concepto.setTipo("Pago Deuda");
+        concepto.setDescripcion("Me pagaron la deuda del 1400 soles");
 
         Importe importe = new Importe();
-        importe.setCantidadDinero(111.0);
+        importe.setCantidadDinero(1400.0);
         importe.setFecha(LocalDate.now());
+        importe.setConcepto(concepto);
+
+        lista.forEach(financiera -> System.out.println(financiera));
+
+        ServiciosEntidadFinanciera serviciosEntidadFinanciera = new ServiciosEntidadFinanciera(lista);
+        System.out.println("Saldo general actual: " + serviciosEntidadFinanciera.sumarAlSaldo().getDineroDisponible() + "\n");
+        String message = "";
+        message = serviciosEntidadFinanciera.deposito("BBVA", importe);
+        System.out.println(message);
+        System.out.println("******************************************************");
+
+        lista.forEach(financiera -> System.out.println(financiera));
+        System.out.println("Saldo general actual: " + serviciosEntidadFinanciera.sumarAlSaldo().getDineroDisponible() + "\n");
+
+        System.out.println("******************************************************");
 
         Importe importe1 = new Importe();
-        importe1.setCantidadDinero(240.4);
+        importe1.setCantidadDinero(2500.45);
         importe1.setFecha(LocalDate.now());
-        System.out.println(importe1);
-*/
+        importe1.setConcepto(concepto);
+        message = serviciosEntidadFinanciera.deposito("Interbank",importe1);
+        System.out.println(message);
+
+        lista.forEach(financiera -> System.out.println(financiera));
+        System.out.println("Saldo general actual: " + serviciosEntidadFinanciera.sumarAlSaldo().getDineroDisponible() + "\n");
+
     }
 }
