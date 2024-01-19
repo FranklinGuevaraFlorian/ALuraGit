@@ -3,6 +3,7 @@ package Model;
 public class EntidadFinanciera {
     private String nombreEntidad;
     private Double saldoDisponible;
+    private String cliente;
 
     public EntidadFinanciera(){}
     public EntidadFinanciera(String nombreEntidad, Double saldoDisponible) {
