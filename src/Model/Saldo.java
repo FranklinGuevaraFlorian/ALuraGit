@@ -12,7 +12,7 @@ public class Saldo {
     public void setDineroDisponible(Double dineroDisponible) {
         this.dineroDisponible = dineroDisponible;
     }
-
+    private Integer a;
     @Override
     public String toString() {
         return "Saldo total disponible:" + getDineroDisponible();
