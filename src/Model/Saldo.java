@@ -1,5 +1,7 @@
 package Model;
 
+import java.math.BigDecimal;
+
 public class Saldo {
     private Double dineroDisponible;
     public Saldo(){}
@@ -14,7 +16,10 @@ public class Saldo {
     public Byte devolverEdad(byte edad){return null;}
     private Integer a;
     private Boolean b;
+    private BigDecimal variableQueGuardareParaUsarDespuesEnUnCommitTemporal;
     public void saludar(){}
+
+
     @Override
     public String toString() {
         return "Saldo total disponible:" + getDineroDisponible();
