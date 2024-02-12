@@ -18,7 +18,7 @@ public class Saldo {
     private Boolean b;
     private BigDecimal variableQueGuardareParaUsarDespuesEnUnCommitTemporal;
     public void saludar(){}
-    
+
     public void despedir(String holaJAJA){}
     @Override
     public String toString() {
