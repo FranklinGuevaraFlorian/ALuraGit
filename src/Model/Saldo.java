@@ -12,6 +12,8 @@ public class Saldo {
     public void setDineroDisponible(Double dineroDisponible) {
         this.dineroDisponible = dineroDisponible;
     }
+    public void comer(String comida){}
+    public Byte devolverEdad(byte edad){return null;}
     private Integer a;
     @Override
     public String toString() {
