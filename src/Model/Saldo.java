@@ -20,6 +20,7 @@ public class Saldo {
     public void saludar(){}
 
 
+    public void despedir(String holaJAJA){}
     @Override
     public String toString() {
         return "Saldo total disponible:" + getDineroDisponible();
