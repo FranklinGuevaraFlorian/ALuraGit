@@ -14,7 +14,6 @@ public class Saldo {
     public Byte devolverEdad(byte edad){return null;}
     private Integer a;
     private Boolean b;
-    private char c;
     @Override
     public String toString() {
         return "Saldo total disponible:" + getDineroDisponible();
