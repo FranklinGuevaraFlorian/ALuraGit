@@ -13,6 +13,7 @@ public class Saldo {
         this.dineroDisponible = dineroDisponible;
     }
     private Integer a;
+    private Boolean b;
     @Override
     public String toString() {
         return "Saldo total disponible:" + getDineroDisponible();
