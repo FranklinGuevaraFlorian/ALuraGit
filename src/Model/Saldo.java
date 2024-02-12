@@ -2,9 +2,7 @@ package Model;
 
 public class Saldo {
     private Double dineroDisponible;
-
     public Saldo(){}
-
     public Double getDineroDisponible() {
         return dineroDisponible;
     }
@@ -17,6 +15,7 @@ public class Saldo {
     private Integer a;
     private Boolean b;
     private char c;
+    private Double nuevaVariable;
     @Override
     public String toString() {
         return "Saldo total disponible:" + getDineroDisponible();
