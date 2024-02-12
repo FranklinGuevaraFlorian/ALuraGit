@@ -15,6 +15,7 @@ public class Saldo {
     public void comer(String comida){}
     public Byte devolverEdad(byte edad){return null;}
     private Integer a;
+    private Boolean b;
     @Override
     public String toString() {
         return "Saldo total disponible:" + getDineroDisponible();
